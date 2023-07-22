@@ -1,6 +1,5 @@
 //make sure it simplifies everything one function at a time --- then do it together
 //make sure it adds comments
-//figure out whyyy it does the two bananas
 
 //Helps us with scraping
 const puppeteer = require("puppeteer");
