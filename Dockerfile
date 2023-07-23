@@ -1,17 +1,8 @@
-# Use the official Node.js image as the base image
-FROM node:16-alpine
-
-# Set the working directory inside the container
+# syntax=docker/dockerfile:1
+   
+FROM node:18-alpine
 WORKDIR /app
-
-# Copy the package.json and package-lock.json files to the container
-COPY package*.json ./
-
-# Install the application dependencies
-RUN npm install
-
-# Copy all the application files to the container
 COPY . .
-
-# Specify the command to run your application
-CMD ["node", "scraper.js"]
+RUN yarn install --production
+CMD ["node", "src/index.js"]
+EXPOSE 3000
